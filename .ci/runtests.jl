@@ -1,7 +1,7 @@
 using Pluto, Test
 
 notebookfiles = [
-    joinpath((isinteractive() ? pwd() : @__FILE__),
+    joinpath((isinteractive() ? pwd() : dirname(@__FILE__)),
              "..", "project$(i)", "project$(i).jl") for i in 1:3
 ]
 
