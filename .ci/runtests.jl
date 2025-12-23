@@ -11,14 +11,11 @@ notebookfiles = [
     notebook = Pluto.SessionActions.open(session, notebookfile; run_async=false);
 
     println("___ NOTEBOOK LOGS START ___")
-    for (cell_id, cell) in notebook.cells
+    for cell in notebook.cells
         if !isempty(cell.logs)
-            println("Logs for cell $(cell_id):")
+            println("Logs for cell $(cell.cell_id):")
             for log in cell.logs
-                # Pluto logs are dict-like. "msg" is the main text.
-                # Depending on Pluto version, it might be a Dict or a Struct.
-                msg = get(log, "msg", log) 
-                println("  [$(get(log, "level", "INFO"))] $msg")
+                @info "Line $(log["line"])" msg=log["msg"] level=log["level"]
             end
         end
     end
