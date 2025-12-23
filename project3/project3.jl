@@ -1285,21 +1285,6 @@ separator()
 # ╔═╡ 6bffdf52-4c8d-464e-acad-ec21d528bdbd
 separator()
 
-# ╔═╡ 95e3d42f-b33f-4294-81c5-f34a300dc9b4
-# This needs to be in the cell above.
-begin
-	pkg_trigger
-	html"""
-	<script>
-	let cell = currentScript.closest('pluto-cell')
-	let id = cell.getAttribute('id')
-	let cells_below = document.querySelectorAll(`pluto-cell[id='${id}'] ~ pluto-cell`)
-	let cell_below_ids = [cells_below[0]].map((el) => el.getAttribute('id'))
-	cell._internal_pluto_actions.set_and_run_multiple(cell_below_ids)
-	</script>
-	"""
-end
-
 # ╔═╡ ba6c082b-6e62-42fc-a85c-c8b7efc89b88
 # ╠═╡ show_logs = false
 begin
@@ -4288,7 +4273,6 @@ version = "1.9.2+0"
 # ╟─6beda870-0cb0-40f5-9531-fa3e2f7bb020
 # ╠═5c3d24f6-0106-444c-b7df-89bba8c01b37
 # ╟─4edc5933-9457-4c7c-8456-a26974e0587e
-# ╟─95e3d42f-b33f-4294-81c5-f34a300dc9b4
 # ╟─ba6c082b-6e62-42fc-a85c-c8b7efc89b88
 # ╟─02fac8f9-b442-40d7-b3f3-415a10570e8e
 # ╟─173388ab-207a-42a6-b364-b2c1cb335f6b
