@@ -31,9 +31,9 @@ jobs:
           echo "$AGE_SECRET_KEY" > .age/ci-key.txt
           chmod 600 .age/ci-key.txt
 
-      - name: Add custom Julia registry
+      - name: Add Julia registries
         run: |
-          julia -e 'using Pkg; pkg"registry add https://github.com/sisl/Registry.git"'
+          julia -e 'using Pkg; Pkg.Registry.add(); Pkg.Registry.add(Pkg.RegistrySpec(url="https://github.com/sisl/Registry.git"))'
 
       - name: Instantiate test environment
         run: |
