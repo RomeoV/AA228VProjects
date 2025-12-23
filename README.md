@@ -81,10 +81,8 @@ Julia is a just-in-time (JIT) compiled language. Don't be alarmed if the first t
 
 # Teaching Team
 
-_Winter 2025 teaching team_:
+_Winter 2026 teaching team_:
 - Sydney Katz: [@smkatz12](https://github.com/smkatz12)
+- Ian Lasic: [@ianlasic]()
+- Romeo Valentin: [@romeov](https://github.com/romeov)
 - Mykel Kochenderfer: [@mykelk](https://github.com/mykelk)
-- Robert Moss: [@mossr](https://github.com/mossr)
-- Harrison Delecki: [@hdelecki](https://github.com/hdelecki)
-- Francois Chaubard: [@fchaubard](https://github.com/fchaubard)
-- Sidharth Tadeparti: [@sidt36](https://github.com/sidt36)
