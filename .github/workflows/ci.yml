@@ -20,8 +20,8 @@ jobs:
 
       - name: Install age
         run: |
-          sudo apt-get update
-          sudo apt-get install -y age
+          go install filippo.io/age/cmd/...@latest
+          echo "$HOME/go/bin" >> $GITHUB_PATH
 
       - name: Setup age secret key
         env:
