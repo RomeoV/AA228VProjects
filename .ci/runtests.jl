@@ -24,6 +24,7 @@ notebookfiles = [
     end
     println("___ NOTEBOOK LOGS END ___")
 
+    @test Pluto.WorkspaceManager.eval_fetch_in_workspace((session, notebook), :(haskey(ENV, "AA228V_CI_SSH_KEY")))
     @test all(c -> c.errored == false, values(notebook.cells))
     @test Pluto.WorkspaceManager.eval_fetch_in_workspace((session, notebook), :(pass_small))
     @test Pluto.WorkspaceManager.eval_fetch_in_workspace((session, notebook), :(pass_medium))
