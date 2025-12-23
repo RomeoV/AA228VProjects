@@ -62,6 +62,7 @@ if haskey(ENV, "AA228V_CI_SSH_KEY")
             
             # Include the decrypted file
             include(tempfile)
+            @info "Loaded solutions file"
         end
     end
 end
