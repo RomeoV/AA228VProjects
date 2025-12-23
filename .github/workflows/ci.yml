@@ -18,10 +18,25 @@ jobs:
 
       - uses: julia-actions/cache@v2
 
+      - name: Install age
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y age
+
+      - name: Setup age secret key
+        env:
+          AGE_SECRET_KEY: ${{ secrets.AGE_SECRET_KEY }}
+        run: |
+          mkdir -p .age
+          echo "$AGE_SECRET_KEY" > .age/ci-key.txt
+          chmod 600 .age/ci-key.txt
+
       - name: Instantiate test environment
         run: |
           julia --project=.ci -e 'using Pkg; Pkg.instantiate()'
 
       - name: Run tests
+        env:
+          AA228V_CI_SSH_KEY: ${{ github.workspace }}/.age/ci-key.txt
         run: |
           julia --project=.ci .ci/runtests.jl
