@@ -45,6 +45,8 @@ begin
 end
 
 # ╔═╡ 75914983-18b1-45fc-81ec-595b2b34c594
+begin
+CI_SOLUTIONS_LOADED = false
 if haskey(ENV, "AA228V_CI_SSH_KEY")
     # Check if age is installed
     if !success(`age --version`)
@@ -65,6 +67,7 @@ if haskey(ENV, "AA228V_CI_SSH_KEY")
             @info "Loaded solutions file"
         end
     end
+end
 end
 
 # ╔═╡ 117d0059-ce1a-497e-8667-a0c2ef20c632
