@@ -1447,6 +1447,7 @@ end
 
 # ╔═╡ d0a3770a-2c48-42db-9a71-6b7f695f22d8
 begin
+    CI_SOLUTIONS_LOADED
 	τs_small, log_small, pass_small = rerun_multiple(sys_small;
 		                                             f=most_likely_failure_small,
 												     run=rerun_small, 
